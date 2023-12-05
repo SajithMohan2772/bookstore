@@ -46,6 +46,7 @@ return (
                         <th className="border border-slate-600 rounded-md">No</th>
                         <th className="border border-slate-600 rounded-md">Title</th>
                         <th className="border border-slate-600 rounded-md max-md:hidden">Author</th>
+                        <th className="border border-slate-600 rounded-md max-md:hidden">publishYear</th>
                         <th className="border border-slate-600 rounded-md max-md:hidden">Operations</th>
                     </tr>
                 </thead>
@@ -70,11 +71,11 @@ return (
                                 {/* <FaInfo className='text-2x1 text-green-800'/>  */}
                                 i
                                 </Link>
-                                <Link to={`/books/details/${book._id}`}>
+                                <Link to={`/books/edit/${book._id}`}>
                                 {/* <CiEdit className='text-2x1 text-yellow-600'/>  */}
                                 e
                                 </Link>
-                                <Link to={`/books/details/${book._id}`}>
+                                <Link to={`/books/delete/${book._id}`}>
                                 {/* <MdDeleteForever className='text-2x1 text-red-600'/>  */}
                                 d
                                 </Link>
