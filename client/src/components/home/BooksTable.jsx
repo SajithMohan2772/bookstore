@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
-const BooksTable = (books) => {
+import PropTypes from "prop-types";
+const BooksTable = ({ books }) => {
 return (
     <table className="w-full border-separate border-spacing-2">
                 <thead>
@@ -43,10 +44,24 @@ return (
                                 </div>
                             </td>
                         </tr>
-                    ))}
+                ))}
                 </tbody>
             </table>
   )
 }
+
+// PropTypes validation outside the component definition
+BooksTable.propTypes = {
+books: PropTypes.arrayOf(
+    PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        author: PropTypes.string.isRequired,
+        publishYear: PropTypes.number.isRequired,
+        createdAt: PropTypes.string.isRequired,
+        // Add other properties with their respective PropTypes
+    })
+).isRequired,
+};
 
 export default BooksTable

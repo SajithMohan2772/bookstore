@@ -16,22 +16,23 @@ import BooksTable from "../components/home/BooksTable";
 
 const Home = () => {
     const [books, setBooks] = useState([]);
-    // console.log(typeof books)
     const [loading, setLoading] = useState(false);
     const [showType, setShowType] = useState('table');
     useEffect(() => {
-        setLoading(true);
-        axios
-            .get('http://localhost:5555/books')
-            .then((response) =>{
-                setBooks(response.data.data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.log(error);
-                setLoading(false);
-            });
+    setLoading(true);
+    axios
+        .get('http://localhost:5555/books')
+        .then((response) => {
+            console.log('books from', response )
+        setBooks(response.data.data);
+        setLoading(false);
+        })
+        .catch((error) => {
+        console.log(error);
+        setLoading(false);
+        });
     }, []);
+    
 
 return (
     <div className="p-4">
